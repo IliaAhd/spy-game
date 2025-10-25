@@ -21,6 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl" suppressHydrationWarning>
+      <head>
+        <meta
+          name="google-site-verification"
+          content="lYiZEcAi_DBkCSa1z6VG049H1Xz7xUdxDamnzU2UGPI"
+        />
+      </head>
       <body className={`${vazirmatn.className} antialiased`}>
         <ThemeProvider
           attribute="class"
