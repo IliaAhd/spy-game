@@ -3,6 +3,8 @@ import { Vazirmatn } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { GameProvider } from "@/contexts/GameContext";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import Link from "next/link";
 
 const vazirmatn = Vazirmatn({
   variable: "--font-vazirmatn",
@@ -34,7 +36,26 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <GameProvider>{children}</GameProvider>
+          <GameProvider>
+            <header className="shadow-sm lg:px-0 dark:shadow-neutral-600">
+              <div className="container mx-auto flex items-center justify-between p-4">
+                <nav className="flex items-center gap-4">
+                  <Link href="/" className="font-medium hover:underline">
+                    صفحه اصلی
+                  </Link>
+
+                  <Link
+                    href="https://github.com/iliaAhd/spy-game"
+                    className="font-medium hover:underline"
+                  >
+                    گیت هاب
+                  </Link>
+                </nav>
+                <ThemeToggle />
+              </div>
+            </header>
+            {children}
+          </GameProvider>
         </ThemeProvider>
       </body>
     </html>
